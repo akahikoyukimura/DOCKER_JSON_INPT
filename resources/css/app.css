@@ -1,0 +1,9 @@
+.container {
+    background-color: #18191b;
+    padding: 5% 5%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
