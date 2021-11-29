@@ -413,42 +413,21 @@
     <h1 class="text-center header">MAROC'S UNIVERSITIES</h1>
     <div class="container">
         <div class="row">
+
+            @forelse ($universities as $i)
+
             <div class="card" style="width: 18rem;margin: 2% 2%;">
-                <img src="img/2.jpg" height="100%" class="card-img-top" alt="Université Hassan II">
+                <img src="{{ $i->photo }}" height="100%" class="card-img-top" alt="Université Hassan II">
                 <div class="card-body">
-                    <h5 class="card-title">Université Hassan II</h5>
-                    <p class="card-text">Université Hassan II CASABLANCA</p>
-                    <a href="http://www.univh2c.ma/" class="btn btn-primary">Web Site</a>
+                    <h5 class="card-title">{{ $i->name }}</h5>
+                    <p class="card-text">{{ $i->adress }}</p>
+                    <a href="{{ $i->domaine }}" class="btn btn-primary">Web Site</a>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;margin: 2% 2%;">
-                <img src="img/1.jpg" height="100%" class="card-img-top" alt="Université Ibn Zohr">
-                <div class="card-body">
-                    <h5 class="card-title">Université Ibn Zohr</h5>
-                    <p class="card-text">BP 32/S, CP 80000 Agadir, Maroc</p>
-                    <a href="https://www.uiz.ac.ma/" class="btn btn-primary">Web Site</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;margin: 2% 2%;">
-                <img src="img/4.jpg" height="100%" class="card-img-top" alt="Université Cadi Ayyad">
-                <div class="card-body">
-                    <h5 class="card-title">Université Cadi Ayyad</h5>
-                    <p class="card-text">Av Abdelkrim Khattabi, B.P. 511 - 40000 -</p>
-                    <a href="https://www.uca.ma/" class="btn btn-primary">Web Site</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;margin: 2% 2%;">
-                <img src="img/3.jpeg" height="100%" class="card-img-top" alt="Université Ibn-Tofail">
-                <div class="card-body">
-                    <h5 class="card-title">Université Ibn-Tofail</h5>
-                    <p class="card-text">B.P 242
-                        Kénitra, Maroc</p>
-                    <a href="https://www.uit.ac.ma/" class="btn btn-primary">Web Site</a>
-                </div>
-            </div>
+        @empty
+            <span class="badge badge-danger">no university disponible</span>
+        @endforelse
 
         </div>
     </div>
