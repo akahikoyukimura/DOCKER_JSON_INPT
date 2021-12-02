@@ -6,12 +6,28 @@
 
 .container {
     background-color: #18191b;
-    padding: 5% 10%;
+    padding: 2% 10%;
     border-radius: 10px;
+}
+
+.add_link{
+    background-color: white;
+    padding: 1% 4%;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.add_link:hover{
+    color: white;
+    background-color: #3185ff;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+}
+
+.form-label{
+    color: white;
 }

@@ -412,23 +412,27 @@
 <body class="antialiased">
     <h1 class="text-center header">MAROC'S UNIVERSITIES</h1>
     <div class="container">
-        <a class="add_link" href="{{ route('add') }}">ADD</a>
         <div class="row">
 
-            @forelse ($universities as $i)
-
-            <div class="card" style="width: 18rem;margin: 2% 2%;">
-                <img src="{{ $i->photo }}" height="100%" class="card-img-top" alt="Université Hassan II">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $i->name }}</h5>
-                    <p class="card-text">{{ $i->adress }}</p>
-                    <a href="{{ $i->domaine }}" class="btn btn-primary">Web Site</a>
+            <form method="POST">
+                {{ csrf_field() }}
+                <div class="mb-3">
+                  <label for="photo" class="form-label">Photo</label>
+                  <input type="text" class="form-control" name="photo" id="photo">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" name="name" id="name">
                 </div>
-            </div>
-
-        @empty
-            <span class="badge badge-danger">no university disponible</span>
-        @endforelse
+                <div class="mb-3">
+                    <label for="adress" class="form-label">Adress</label>
+                    <input type="text" class="form-control" name="adress" id="adress">
+                </div>
+                <div class="mb-3">
+                    <label for="domaine" class="form-label">Domaine</label>
+                    <input type="text" class="form-control" name="domaine" id="domaine">
+                </div>
+                <button type="{{ route('add_univ') }}" class="btn btn-primary">ADD</button>
+              </form>
 
         </div>
     </div>

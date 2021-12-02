@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UniversityController;
+use App\Http\Controllers\JsonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/',[UniversityController::class,'index'])->name('get.universities');
+//Route::get('/',[UniversityController::class,'index'])->name('get.universities');
+Route::get('/',[JsonController::class,'index'])->name('get.universities');
+Route::get('/add',function(){return view('Add_univ');})->name('add');
+Route::post('/add',[JsonController::class,'add'])->name('add_univ');
